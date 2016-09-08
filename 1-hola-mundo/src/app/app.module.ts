@@ -1,24 +1,27 @@
-import {NgModule} from '@angular/core'
-import {RouterModule} from "@angular/router";
-import {rootRouterConfig} from "./app.routes";
-import {AppComponent} from "./app";
-import {Github} from "./github/shared/github";
-import {FormsModule} from "@angular/forms";
-import {BrowserModule} from "@angular/platform-browser";
-import {HttpModule} from "@angular/http";
-import {About} from './about/about';
-import {Home} from './home/home';
-import {RepoBrowser} from './github/repo-browser/repo-browser';
-import {RepoList} from './github/repo-list/repo-list';
-import {RepoDetail} from './github/repo-detail/repo-detail';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+/**
+ * Módulo ráiz de la aplicación
+ * Importa al resto de módulos
+ * configura este módulo y sus dependencias
+ */
 
+// en el módulo principal de Angular 2 viene el decorador de módulos
+import {NgModule} from '@angular/core'
+// diversos módulos que vayan siendo necesarios
+import {BrowserModule} from "@angular/platform-browser";
+
+// el componente (el elemento html app) raiz de la aplicación
+import {AppComponent} from "./app";
+
+
+// usa el decorador para crear y configurar el módulo raiz  
 @NgModule({
-  declarations: [AppComponent, About, RepoBrowser, RepoList, RepoDetail, Home],
-  imports     : [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(rootRouterConfig)],
-  providers   : [Github, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  declarations: [AppComponent],
+  imports     : [BrowserModule],
   bootstrap   : [AppComponent]
 })
 export class AppModule {
-
+  /**
+   * esta clase es el soporte lógico para un módulo
+   * el decorador trabaja sobre ella inyectándole dependencias...
+   */
 }
