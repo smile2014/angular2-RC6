@@ -1,4 +1,4 @@
 /node_modules/
 /dist/
-/npm-debug.log
-/typings/
+**/typings/**
+**/npm-debug.log
