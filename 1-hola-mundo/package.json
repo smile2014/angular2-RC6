@@ -1,7 +1,7 @@
 {
-  "name": "angular2-seed",
+  "name": "angular2-hola_mundo",
   "version": "1.0.0",
-  "description": "A simple starter Angular2 project",
+  "description": "Un hola mundo con Angular2",
   "scripts": {
     "typings-install": "typings install",
     "postinstall": "npm run typings-install",
@@ -10,6 +10,11 @@
     "server": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
     "start": "npm run server"
   },
+  "author": {
+    "name": "Alberto Basalo",
+    "email": "albertobasalo@hotmail.com"
+  }
+  ,
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",
     "PatrickJS <github@gdi2290.com>"
@@ -42,18 +47,5 @@
     "rxjs": "5.0.0-beta.11",
     "zone.js": "~0.6.17"
   },
-  "keywords": [
-    "Angular2",
-    "angular2-seed",
-    "official angular 2 seed",
-    "official angular2 seed"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/angular/angular2-seed.git"
-  },
-  "bugs": {
-    "url": "https://github.com/angular/angular2-seed/issues"
-  },
-  "homepage": "https://github.com/angular/angular2-seed#readme"
+  "homepage": "https://academia-binaria.com"
 }
