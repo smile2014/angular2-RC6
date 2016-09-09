@@ -13,11 +13,14 @@ export class SaludoComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {
     // Idealmente sólo se usa para declarar dependencias
   }
-  
+
   /**
-   * Mejor programar en oInit
+   * Mejor programar en onInit
    */
   ngOnInit() {
+    /**
+     * this.activatedRoute.params es un observable ¿WTF?
+     */
     this.activatedRoute.params.subscribe(parametros => {
       this.amigo = parametros['amigo'] || 'anónimo';
     });
