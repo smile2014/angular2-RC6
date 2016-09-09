@@ -4,22 +4,23 @@
   {{ titulo }}
 </h1>
 <form>
-  <label>¿Cómo te llamas?</label>
-  <!--Enlace doble (lectura y escritura) entre la vista y el modelo-->
-  <input type="text" name="aprendiz" [(ngModel)]="aprendiz" />
-  <p>Bienvenido a Angular 2 {{ aprendiz }} </p>
-  
-  <!--Expresiones-->
-  <p>Soy capaz de multiplicar por {{1 * 2}} tus habilidades </p>
-  
-  <!--Eventos-->
-  <button (click)="visible=true">Saludar</button>
-  
-  <!--Propiedades-->
-  <p [hidden]="!visible">Hola {{ aprendiz }}!!!
-    <!--eventos de codigo-->
-    <button (click)="decirAdios()">Adios</button>
-    <movimiento></movimiento>
-  </p>
-  
+  <div [hidden]="avanzado">
+    <label>¿Cómo te llamas?</label>
+    <!--Enlace doble (lectura y escritura) entre la vista y el modelo-->
+    <input type="text" name="aprendiz" [(ngModel)]="aprendiz" />
+    <p>Bienvenido a Angular 2 {{ aprendiz }} </p>
+
+    <!--Expresiones-->
+    <p>Soy capaz de multiplicar por {{1 * 2}} tus habilidades </p>
+
+    <!--Eventos-->
+    <button (click)="visible=true">Saludar</button>
+
+    <!--Propiedades-->
+    <p [hidden]="!visible">Hola {{ aprendiz }}!!!
+      <!--eventos de codigo-->
+      <button (click)="decirAdios()">Avanzar</button>
+    </p>
+  </div>
+  <movimiento [hidden]="!avanzado"></movimiento>
 </form>

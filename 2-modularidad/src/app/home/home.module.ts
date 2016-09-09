@@ -7,7 +7,7 @@ import { SaludoComponent }   from './saludo/saludo.component';
 
 @NgModule({
   imports: [],
-  exports: [SaludoComponent],
+  exports: [SaludoComponent], // Componentes que exporta
   declarations: [SaludoComponent],
   providers: [],
 })

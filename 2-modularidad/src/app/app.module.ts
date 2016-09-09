@@ -14,9 +14,9 @@ import {HomeModule} from "./home/home.module"
 
 // declarar la importación de este módulo 
 @NgModule({
-  declarations: [AppComponent],
-  imports     : [BrowserModule, HomeModule],
-  bootstrap   : [AppComponent]
+  declarations: [AppComponent], // componentes que necesita
+  imports     : [BrowserModule, HomeModule], // Módulos de los que depende
+  bootstrap: [AppComponent], // Sólo en el caso raiz
 })
 export class AppModule {
 

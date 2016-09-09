@@ -11,6 +11,7 @@ export class SaludoComponent implements OnInit {
   // las propiedades de esta clase son enlazables desde la plantilla
   titulo: string = "Hola Aprendiz";
   visible: boolean = false;
+  avanzado: boolean = false;
   
   constructor() { 
     /** Aquí no debe ir lógica.
@@ -27,6 +28,8 @@ export class SaludoComponent implements OnInit {
   // metodo llamable desde un evento de la vista
   decirAdios() {
     // acceso a las propiedades mediante this
-    this.visible = false
+    this.visible = false;
+    this.avanzado = true;
+    this.titulo = "Empieza el movimiento!!!";
   }
 }
