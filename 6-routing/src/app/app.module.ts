@@ -20,11 +20,13 @@ import {AppComponent} from "./app.component";
 */
 import {HomeModule} from "./home/home.module"
 import {AcercaDeModule} from "./acerca-de/acerca-de.module"
+import {SaludoModule} from "./saludo/saludo.module"
 /**
  * Componentes que se visualizarán en cada ruta
  */
 import {MovimientoComponent} from "./home/movimiento/movimiento.component"
 import {AcercaDeComponent} from "./acerca-de/acerca-de.component"
+import {SaludoComponent} from "./saludo/saludo.component"
 
 
 
@@ -32,14 +34,15 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: MovimientoComponent },
   { path: 'acerca-de', component: AcercaDeComponent },
-  { path: 'about', redirectTo: 'acerca-de' }
+  { path: 'about', redirectTo: 'acerca-de' },
+  { path: 'saludo/:amigo', component: SaludoComponent },
  ];
 
 let router = RouterModule.forRoot(routes) // <-- routes
 
 @NgModule({
   declarations: [AppComponent],
-  imports     : [BrowserModule, HomeModule, AcercaDeModule, router],
+  imports     : [BrowserModule, HomeModule, AcercaDeModule, SaludoModule ,router],
   bootstrap   : [AppComponent]
 })
 export class AppModule {
