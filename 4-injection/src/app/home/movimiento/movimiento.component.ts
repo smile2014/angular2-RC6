@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// importar clases o interfaces
+import { MovimientosService } from './shared/movimientos.service'
 
 @Component({
   selector: 'movimiento',
@@ -6,54 +8,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['movimiento.component.css']
 })
 export class MovimientoComponent implements OnInit {
-  /**  propiedades para representar el estado del modelo de la vista */
-  categoriasIngreso: string[] = ['Nómina', 'Venta', 'Interés', 'Impuesto']
-  categoriasGasto: string[] = ['Hipoteca', 'Compra', 'Interés', 'Impuesto']
-  movimiento: Movimiento
-  movimientos: Movimiento[] = []
+   // nos quedamos con las propiedades exclusivas de la vista
+  movimiento: any
   sentidoOrden: number = 1
-  ingresos: number = 0
-  gastos: number = 0
-  balance: number = 0
 
-  /** constructor   */
-  constructor() { }
 
-  /**  eventos del workFlow de componentes  */
-  ngOnInit() {
-    this.movimiento = {
-      _id: new Date().toDateString(),
-      tipo: "Ingreso",
-      categoria: "Nómina",
-      fecha: new Date(),
-      importe: 0
-    }
+  /** 3 declarar el servicio en constructor para su inyección*/
+  constructor(private movimientosService: MovimientosService) {
   }
 
-  /** métodos con funcionalidad para el modelo de la vista  */
+  ngOnInit() {
+     this.movimiento = {
+       _id: new Date().toDateString(),
+       tipo: "Ingreso",
+       categoria: "Nómina",
+       fecha: new Date(),
+       importe: 0
+     }
+  }
+
   guardarMovimiento() {
-    if (this.movimiento.tipo === 'Ingreso')
-      this.ingresos += this.movimiento.importe
-    else
-      this.gastos += this.movimiento.importe
-    this.balance = this.ingresos - this.gastos
-    this.movimientos.push(Object.assign({}, this.movimiento))
-  }  
+    // 4 usar servicio
+    this.movimientosService.guardarMovimiento(this.movimiento)
+  }
+
   ordenarPor(campo: string) {
     this.sentidoOrden = -1 * this.sentidoOrden
-    this.movimientos.sort((a, b) => a[campo] < b[campo] ? this.sentidoOrden : -1 * this.sentidoOrden)
+    this.movimientosService.ordenarPor(campo, this.sentidoOrden)
   }
+
+  // TODO: mover fuciones de utilidad a una clase inyectable en un fichero común
   fecha(cadena) {
     return new Date(cadena)
   }
 }
-/** clase para representar el modelo de datos
- * debería ir en un fichero aparte
-*/
-export class Movimiento {
-  _id: string;
-  tipo: string
-  categoria: string
-  fecha: Date
-  importe: number
-}
+
