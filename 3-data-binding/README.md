@@ -10,3 +10,7 @@ Demostración de capacidades básicas con Angular 2
 - `webpack.config.js` : carga y empaquetado de ficheros js.
 - `src` : carpeta para código fuente
 - `index.html` : índice html de la SPA
+
+
+### 1.5 -> 2
+[directives](http://ngmigrate.telerik.com/from-ng-repeat-to-ng-for)

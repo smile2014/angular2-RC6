@@ -10,3 +10,6 @@ Demostración de capacidades básicas con Angular 2
 - `webpack.config.js` : carga y empaquetado de ficheros js.
 - `src` : carpeta para código fuente
 - `index.html` : índice html de la SPA
+
+### 1.5 -> 2
+[module](http://ngmigrate.telerik.com/from-angular-module-to-ngModule)
