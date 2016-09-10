@@ -34,7 +34,12 @@ export class MovimientosService {
     }
     this.calcularBalance()
   }
-    
+  
+  obtenerMovimiento(movimientoId:string) {
+    let movimientoEncontrado = this.movimientos.find(m => m._id == movimientoId)
+    return movimientoEncontrado
+  }
+
   borrarMovimiento(movimiento: MovimientoModel) {
     let indice = this.movimientos.findIndex((m) => m._id === movimiento._id)
     this.movimientos.splice(indice, 1)

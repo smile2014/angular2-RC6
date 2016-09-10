@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { CommonModule } from "@angular/common";
 import { FormsModule }   from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
 
 import { MovimientoComponent }   from './movimiento/movimiento.component';
 import { MovimientosService }   from './movimiento/shared/movimientos.service';
@@ -13,9 +13,9 @@ import { MovimientoBalanceComponent }   from './movimiento/balance/movimiento-ba
 
 // y los registra como declaraciones
 @NgModule({
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   exports: [MovimientoComponent],
   declarations: [MovimientoComponent, MovimientoEditorComponent, MovimientoListaComponent, MovimientoBalanceComponent],
-  providers: [MovimientosService] // los servicios se registran como proveedores
+  providers: [MovimientosService] 
 })
 export class HomeModule { }

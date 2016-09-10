@@ -8,6 +8,7 @@
       <th (click)="ordenarPor('importe')">Importe</th>
       <th>Borrar</th>
       <th>Editar</th>
+      <th>Visitar</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
       <td [ngClass]="{positivo: m.tipo=='Ingreso',negativo: m.tipo=='Gasto'}">{{m.importe | number}} €</td>
       <td (click)="borrar(m)">X</td>
       <td (click)="seleccionar(m)">E</td>
+      <td ><a [routerLink]="['/movimientos', m._id]">V</a></td>
     </tr>
   </tbody>
 </table>
