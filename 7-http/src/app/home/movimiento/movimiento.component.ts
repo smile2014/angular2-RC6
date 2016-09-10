@@ -18,13 +18,28 @@ export class MovimientoComponent implements OnInit {
    // el componente principal cada vez tiene menor contenido lógico
 
   movimientoSeleccionado = null // para comunicar los subcomponentes  
+  hanCambiadoLosDatos: MovimientoModel = null;
   totales: any = {};
   constructor(private movimientosService: MovimientosService) {
     
   }
 
   ngOnInit() {
-    /** calcular los totales */
+    this.leerTotales();
+  }
+
+  alSeleccionarMovimiento(movimiento: MovimientoModel) {
+    // este método se invoca cuando alguien selecciona un movimiento desde el subcomponente lista
+    // el movimiento seleccionado se envía hacia el subcomponente de edición
+    this.movimientoSeleccionado = movimiento
+  }
+
+  alActualizarDatos(nuevosDatos: MovimientoModel) {
+    this.hanCambiadoLosDatos = nuevosDatos;
+    this.leerTotales();
+  }
+
+  leerTotales() {
     this.movimientosService.leerTotales()
       .subscribe(res => {
         // durante la suscripción se obtienen y transforman los datos
@@ -33,12 +48,6 @@ export class MovimientoComponent implements OnInit {
         else
           console.error(JSON.stringify(res));
       })
-  }
-
-  alSeleccionarMovimiento(movimiento: MovimientoModel) {
-    // este método se invoca cuando alguien selecciona un movimiento desde el subcomponente lista
-    // el movimiento seleccionado se envía hacia el subcomponente de edición
-    this.movimientoSeleccionado = movimiento
   }
 }
 

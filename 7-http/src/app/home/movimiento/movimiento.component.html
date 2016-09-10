@@ -1,17 +1,10 @@
-<!--
-  Sustir el cotenido por tres componentes
-  editor
-  lista
-  balance
--->
 
-<!--este componente permite la edición de movimientos
-normalmente el alta, pero también la edición si recibe un objeto-->
-<movimiento-editor [movimientoParaEditar]="movimientoSeleccionado"></movimiento-editor>
+<!--Suscripción al evento 'actualizarDatos' emitido desde el componente editor
+aprovechamos para recalcular totales-->
+<movimiento-editor [movimientoParaEditar]="movimientoSeleccionado" (actualizarDatos)="alActualizarDatos($event)"></movimiento-editor>
 <hr/>
-<!--Suscripción al evento 'editarMovimiento' emitido desde el componente lista
-En sus argumentos recibimos parámetros que usamos para llamar a nuestro controlador-->
-<movimiento-lista (seleccionarMovimiento)="alSeleccionarMovimiento($event)"></movimiento-lista>
+
+<movimiento-lista (editarMovimiento)="alSeleccionarMovimiento($event)" [actualizate]="hanCambiadoLosDatos"></movimiento-lista>
 <hr/>
 <!--El componente movimiento-balance debe enterarse de los cambios-->
 <movimiento-balance 

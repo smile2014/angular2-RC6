@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovimientosService } from '../shared/movimientos.service';
 import { MovimientoModel } from '../shared/movimiento.model';
 
@@ -10,9 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MovimientoEditorComponent implements OnInit {
   /** 4 Cambios en las llamadas a los servicios  */
-  
+
   @Input('movimientoParaEditar') movimiento: MovimientoModel
-  maestros:any = {}
+
+  @Output() actualizarDatos: EventEmitter<MovimientoModel> = new EventEmitter()
+  maestros: any = {}
 
   constructor(private movimientosService: MovimientosService, private activatedRoute: ActivatedRoute) { }
 
@@ -32,8 +34,9 @@ export class MovimientoEditorComponent implements OnInit {
           .leerMovimientoPor_Id(movimientoId) // la llamda devuelve un observable al que debemos subscribirnos
           .subscribe(response => {
             // función tipo callback cuando vengan resultados
-            if (response.status == 200)
-              this.movimiento = response.json() || this.nuevoMovimiento()
+            if (response.status == 200) {
+              this.movimiento = response.json() || this.nuevoMovimiento();
+            }
             else
               console.error(JSON.stringify(response));
           })
@@ -46,9 +49,14 @@ export class MovimientoEditorComponent implements OnInit {
     // debemos suscribirnos para conocer el resultado
     this.movimientosService
       .guardarMovimiento(this.movimiento)
-      .subscribe(res => {
-        // aunque no hagamos nada con el resultado
-        return false;
+      .subscribe(response => {
+        // hay que suscribirse para ejecutar la llamada
+        // aunque no hiciesemos nada con el resultado
+        if (response.status < 400)
+          // emitir evento si no hubo error
+          this.actualizarDatos.emit(response.json());
+        else
+          console.error(JSON.stringify(response));
       })
   }
 

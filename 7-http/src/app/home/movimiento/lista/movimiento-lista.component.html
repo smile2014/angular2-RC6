@@ -15,7 +15,7 @@
       <td>{{m.tipo}}</td>
       <td>{{m.categoria}}</td>
       <td [ngClass]="{positivo: m.tipo=='Ingreso',negativo: m.tipo=='Gasto'}">{{m.importe | number}} €</td>
-      <td (click)="seleccionar(m)">E</td>
+      <td (click)="editar(m)">E</td>
       <td ><a [routerLink]="['/movimientos', m._id]">V</a></td>
     </tr>
   </tbody>
