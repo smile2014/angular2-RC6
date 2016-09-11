@@ -10,7 +10,7 @@ import { MovimientoModel } from './movimiento.model'
 
 /** 2 uso la función para crear un decorador de la clase del servicio*/
 @Injectable()
-/** 3 clase de servicio con la lógica que antes estaba en el componente */  
+/** 3 clase de servicio exportada con la lógica que antes estaba en el componente */  
 export class MovimientosService {
   // las propiedades que antes tenía el componente ahora las tiene el servicio
   categoriasIngreso: string[] = ['Nómina', 'Venta', 'Interés', 'Impuesto'];

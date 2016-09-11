@@ -9,6 +9,7 @@
   <div>
     <label for="categoria">Categoría:</label>
     <select [(ngModel)]="movimiento.categoria" *ngIf="movimiento.tipo==='Ingreso'">
+      <!--Se puede apuntar directamente al servicio, pues es una propiedad de la calse del componete-->
       <option *ngFor="let categoria of movimientosService.categoriasIngreso" [value]="categoria"  >{{categoria}}</option>
     </select>
     <select [(ngModel)]="movimiento.categoria" *ngIf="movimiento.tipo==='Gasto'">
