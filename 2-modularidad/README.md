@@ -4,12 +4,13 @@ Demostración de capacidades básicas con Angular 2
 
 
 ### Guía
-- `package.json` : dependencias. 
-- `tsconfig.json` : configuración para usar Type Script.
-- `typings.json` : uso de tipos estáticos.
-- `webpack.config.js` : carga y empaquetado de ficheros js.
-- `src` : carpeta para código fuente
-- `index.html` : índice html de la SPA
+- `home` : carpeta para el módulo home
+- `home.module.ts` : un módulo de funionalidad
+- `saludo` : carpeta para el componente saludo dentro del módulo home
+- `saludo.component.ts` : declaración del componete saludo
+- `saludo.component.html` : vista del componete saludo
+- `app.component.html` : incorporamos al componente saludo
+
 
 ### 1.5 -> 2
 [module](http://ngmigrate.telerik.com/from-angular-module-to-ngModule)

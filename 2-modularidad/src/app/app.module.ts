@@ -7,7 +7,7 @@
 import {NgModule} from '@angular/core'
 import {BrowserModule} from "@angular/platform-browser";
 
-import {AppComponent} from "./app";
+import {AppComponent} from "./app.component";
 
 // Importar el nuevo módulo
 import {HomeModule} from "./home/home.module"
