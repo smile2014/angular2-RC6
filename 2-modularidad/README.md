@@ -1,6 +1,6 @@
-## hola mundo
+## Modularidad
 
-Demostración de capacidades básicas con Angular 2
+Módulos de funcionalidad con Angular 2
 
 
 ### Guía

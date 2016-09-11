@@ -3,14 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'movimiento',
   templateUrl: 'movimiento.component.html',
-  styleUrls: ['movimiento.component.css']
+  styleUrls: ['movimiento.component.css'] // su propio css
 })
 export class MovimientoComponent implements OnInit {
   /**  propiedades para representar el estado del modelo de la vista */
   categoriasIngreso: string[] = ['Nómina', 'Venta', 'Interés', 'Impuesto']
   categoriasGasto: string[] = ['Hipoteca', 'Compra', 'Interés', 'Impuesto']
-  movimiento: Movimiento
-  movimientos: Movimiento[] = []
+  movimiento: MovimientoModel
+  movimientos: MovimientoModel[] = []
   sentidoOrden: number = 1
   ingresos: number = 0
   gastos: number = 0
@@ -47,10 +47,11 @@ export class MovimientoComponent implements OnInit {
     return new Date(cadena)
   }
 }
-/** clase para representar el modelo de datos
+/**
+ * Clase para representar el modelo de datos
  * debería ir en un fichero aparte
 */
-export class Movimiento {
+export class MovimientoModel {
   _id: string;
   tipo: string
   categoria: string

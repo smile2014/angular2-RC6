@@ -3,15 +3,17 @@
   <!--Interpolación de variables definidas en el modelo del componente-->
   {{ titulo }}
 </h1>
+<!--Expresiones-->
+  <p>Soy capaz de multiplicar por {{1 * 2}} tus habilidades </p>
 <form>
+  <!--Atributos [] de html enlazados a propiedades-->
   <div [hidden]="avanzado">
     <label>¿Cómo te llamas?</label>
     <!--Enlace doble (lectura y escritura) entre la vista y el modelo-->
     <input type="text" name="aprendiz" [(ngModel)]="aprendiz" />
     <p>Bienvenido a Angular 2 {{ aprendiz }} </p>
-
-    <!--Expresiones-->
-    <p>Soy capaz de multiplicar por {{1 * 2}} tus habilidades </p>
+    <!--En este caso la variable aprendiz no se declaró intencionadamente en la clase
+    En JS esto es ilegal, aunque inmoral ;-)-->
 
     <!--Eventos-->
     <button (click)="visible=true">Saludar</button>

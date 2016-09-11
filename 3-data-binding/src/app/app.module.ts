@@ -1,9 +1,3 @@
-/**
- * Módulo ráiz de la aplicación
- * Importa al resto de módulos
- * configura este módulo y sus dependencias
- */
-
 import {NgModule} from '@angular/core'
 import {BrowserModule} from "@angular/platform-browser";
 
