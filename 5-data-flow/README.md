@@ -1,15 +1,17 @@
 ## hola mundo
 
-Demostración de capacidades básicas con Angular 2
+FLujo de datos con Angular 2
 
 
 ### Guía
-- `package.json` : dependencias. 
-- `tsconfig.json` : configuración para usar Type Script.
-- `typings.json` : uso de tipos estáticos.
-- `webpack.config.js` : carga y empaquetado de ficheros js.
-- `src` : carpeta para código fuente
-- `index.html` : índice html de la SPA
+- `balance` : Carpeta para el componente que mostrá los ingresos y gastos
+- `editor` : Carpeta para el componente con el formaulario de alta y edición
+- `lista` : Carpeta para el componente con la tabla de movimientos
+- `home.module.ts` : Se importan y delcaran los tres componentes
+- `movimiento` : Este componente se vacía hacia los tres nuevos
+- `@input` : Con este decorador se crean propiedades para recibir datos
+- `@output` : Mediante un EventEmitter se envían datos haci el contendor padre
+- `styleUrls` : Las hojas de estilo no se heredan, hay que pedirlas explícitamente
 
 ### 1.5 -> 2
 [components](http://ngmigrate.telerik.com/components)
