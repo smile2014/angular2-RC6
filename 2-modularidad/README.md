@@ -5,7 +5,7 @@ Módulos de funcionalidad con Angular 2
 
 ### Guía
 - `home` : carpeta para el módulo home
-- `home.module.ts` : un módulo de funionalidad
+- `home.module.ts` : un módulo de funcionalidad
 - `saludo` : carpeta para el componente saludo dentro del módulo home
 - `saludo.component.ts` : declaración del componete saludo
 - `saludo.component.html` : vista del componete saludo
