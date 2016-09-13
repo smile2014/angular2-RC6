@@ -1,6 +1,6 @@
-## hola mundo
+## routing
 
-Demostración de capacidades básicas con Angular 2
+Enturado SPA con Angular 2
 
 
 ### Guía

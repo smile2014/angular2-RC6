@@ -1,7 +1,7 @@
 {
-  "name": "angular2-hola_mundo",
+  "name": "angular2-routing",
   "version": "1.0.0",
-  "description": "Un hola mundo con Angular2",
+  "description": "enrutado SPA Angular2",
   "scripts": {
     "typings-install": "typings install",
     "postinstall": "npm run typings-install",

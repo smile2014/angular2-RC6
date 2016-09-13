@@ -1,6 +1,6 @@
-## hola mundo
+## Data flow
 
-FLujo de datos con Angular 2
+Flujo de datos con Angular 2
 
 
 ### Guía
@@ -10,7 +10,7 @@ FLujo de datos con Angular 2
 - `home.module.ts` : Se importan y delcaran los tres componentes
 - `movimiento` : Este componente se vacía hacia los tres nuevos
 - `@input` : Con este decorador se crean propiedades para recibir datos
-- `@output` : Mediante un EventEmitter se envían datos haci el contendor padre
+- `@output` : Mediante un EventEmitter se envían datos hacia el contendor padre
 - `styleUrls` : Las hojas de estilo no se heredan, hay que pedirlas explícitamente
 
 ### 1.5 -> 2
